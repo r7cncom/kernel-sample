@@ -16,9 +16,9 @@
  */
 #include <rtthread.h>
 
-#define THREAD_PRIORITY         25
-#define THREAD_STACK_SIZE       512
-#define THREAD_TIMESLICE        5
+#define THREAD_PRIORITY         25    //优先级
+#define THREAD_STACK_SIZE       512   //栈大小
+#define THREAD_TIMESLICE        5     //时间片
 
 static rt_thread_t tid1 = RT_NULL;
 
@@ -35,7 +35,7 @@ static void thread1_entry(void *parameter)
     }
 }
 
-ALIGN(RT_ALIGN_SIZE)
+ALIGN(RT_ALIGN_SIZE) //设定对齐的字节个数
 static char thread2_stack[1024];
 static struct rt_thread thread2;
 
